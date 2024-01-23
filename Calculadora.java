@@ -31,8 +31,14 @@ public class Calculadora implements ICalculadora {
     public void division(CustomStack<Integer> stack) {
         int valor1 =  stack.pop();
         int valor2 = stack.pop();
-        int resultado = valor1 / valor2;
-        stack.push(resultado);
+        if (valor2 != 0) {
+            int resultado = valor1 / valor2;
+            stack.push(resultado);
+        } else {
+            stack.push(valor2);
+            stack.push(valor1);
+        }
+        
         
     }
 
