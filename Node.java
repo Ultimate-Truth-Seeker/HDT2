@@ -1,3 +1,7 @@
+/**
+ * Clase nodo trabajada en clase
+ * @version 17-01-2024
+ */
 public class Node <T> {
     T value;
     Node<T> next;

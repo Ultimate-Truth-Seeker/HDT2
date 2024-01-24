@@ -1,3 +1,7 @@
+/**
+ * Clase Custom Stack trabajada en clase
+ * @version 17-01-2024
+ */
 public class CustomStack<T> {
     private Node<T> lastnode;
     private Node<T> firstnode;

@@ -1,8 +1,13 @@
 import java.io.File;
 import java.util.Scanner;
-
+/**
+ * Programa principal para calcular en formato postfix
+ * @author Ultimate-Truth-Seeker SaintPage
+ * @version 23- 01 - 2024
+ */
 public class Main {
     public static void main(String args[]){
+        // ingreso de archivo postfix, tiene que estar en la misma carpeta del programa
         System.out.println("Bienvenido, ingrese el nombre del archivo");
         Scanner s = new Scanner(System.in);
         String file = s.nextLine();
@@ -15,10 +20,10 @@ public class Main {
             return;
             
         }
-
+        // Separa por espacios el texto 
         CustomStack<Float> stackPrincipal = new CustomStack<Float>();
         Calculadora calculadora = new Calculadora();
-        
+        // verifica si es un entero o un símbolo, o si hay algún error en el archivo
         String serapcion[] = archivo.split(" ");
         for (var operator : serapcion) {
             boolean verificador = calculadora.isNumber(operator);
@@ -56,10 +61,13 @@ public class Main {
                 }
             } catch (Exception e) {
                 System.out.println("Error, hay más operaciones de las posibles de realizar");
+                s.close();
+                return;
             }
                 
            }
         }
+        // retorna el valor final
         s.close();
         float resultado = stackPrincipal.pop();
         System.out.println("El resultado es: "+ resultado);

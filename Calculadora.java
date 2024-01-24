@@ -1,5 +1,13 @@
+/**
+ * Clase Calculadora que implementa las funciones aritmeticas
+ * @author SaintPage Ultimate-Truth-Seeker
+ * @version 17-01-2024
+ */
 public class Calculadora implements ICalculadora {
-
+    /**
+     * Método para sumar
+     * @param stack la pila de numeros
+     */
     @Override
     public void suma(CustomStack<Float> stack) {
         float valor1 =  stack.pop();
@@ -8,7 +16,10 @@ public class Calculadora implements ICalculadora {
         stack.push(resultado);
         
     }
-
+    /**
+     * Método para restar
+     * @param stack la pila de numeros
+     */
     @Override
     public void resta(CustomStack<Float> stack) {
         float valor1 =  stack.pop();
@@ -17,7 +28,10 @@ public class Calculadora implements ICalculadora {
         stack.push(resultado);
         
     }
-
+    /**
+     * Método para multiplicar
+     * @param stack la pila de numeros
+     */
     @Override
     public void producto(CustomStack<Float> stack) {
         float valor1 =  stack.pop();
@@ -26,7 +40,10 @@ public class Calculadora implements ICalculadora {
         stack.push(resultado);
         
     }
-
+    /**
+     * Método para dividir
+     * @param stack la pila de numeros
+     */
     @Override
     public void division(CustomStack<Float> stack) {
         float valor1 =  stack.pop();
@@ -41,12 +58,19 @@ public class Calculadora implements ICalculadora {
         
         
     }
-
+    /**
+     * Método para añadir un número a la pila
+     * @param stack la pila de numeros
+     * @param n el número 
+     */
     @Override
     public void addNumber(CustomStack<Float> stack, int n) {
         stack.push((float) n);
     }
-
+    /**
+     * Método para verificar que el texto es un entero
+     * @param s el texto ingresado
+     */
     @Override
     public boolean isNumber(String s) {
         try {  
